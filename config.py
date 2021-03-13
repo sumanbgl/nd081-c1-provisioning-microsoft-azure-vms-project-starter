@@ -1,6 +1,8 @@
 import os
+from dotenv import load_dotenv
 
 basedir = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(os.path.join(basedir, ".env"))
 
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'secret-key'
@@ -32,7 +34,7 @@ class Config(object):
 
     CLIENT_ID = "ENTER_CLIENT_ID_HERE"
 
-    REDIRECT_PATH = "/getAToken"  # Used to form an absolute URL; must match to app's redirect_uri set in AAD
+    REDIRECT_PATH = "/getCMSToken"  # Used to form an absolute URL; must match to app's redirect_uri set in AAD
 
     # You can find the proper permission names from this document
     # https://docs.microsoft.com/en-us/graph/permissions-reference
