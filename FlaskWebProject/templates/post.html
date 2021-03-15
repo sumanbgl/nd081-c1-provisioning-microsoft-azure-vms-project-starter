@@ -14,6 +14,10 @@
                 {% endfor %}
             </p>
             <p>
+                {{ form.subtitle.label }}<br>
+                {{ form.subtitle(size=64) }}                
+            </p>
+            <p>
                 {{ form.author.label }}<br>
                 {{ form.author(size=32) }}
                 {% for error in form.author.errors %}
